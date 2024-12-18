@@ -1,0 +1,100 @@
+using System;
+
+namespace CalcIMC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string continuar = "s"; // Variável de controle do loop
+
+            while (continuar.ToLower() == "s")
+            {
+                Console.WriteLine("Digite sua altura (em metros):");
+                float altura = float.Parse(Console.ReadLine());
+
+                Console.WriteLine("Digite seu peso (em kg):");
+                float peso = float.Parse(Console.ReadLine());
+
+                float resultadoIMC = peso / (altura * altura);
+
+                if (resultadoIMC < 16)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"O seu resultado do IMC é: {resultadoIMC:F2}" + "\r");
+                    Console.WriteLine("\nBaixo peso severo, Grave (Magreza): IMC abaixo de 16,0, indicando risco aumentado de complicações.");
+                    Console.WriteLine("Saiba mais no site da OMS: https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/body-mass-index");
+                    Console.WriteLine("");
+                }
+                else if (resultadoIMC >= 16 && resultadoIMC <= 16.9)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"O seu resultado do IMC é: {resultadoIMC:F2}" + "\r");
+                    Console.WriteLine("\nIMC entre 16 e 16.9. Baixo peso moderado. CUIDADO!");
+                    Console.WriteLine("");
+                }
+                else if (resultadoIMC >= 17 && resultadoIMC <= 18.4)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"O seu resultado do IMC é: {resultadoIMC:F2}" + "\r");
+                    Console.WriteLine("\nIMC Acima de 17 e Menor que 18.4. A Organização Mundial da Saúde (OMS).");
+                    Console.WriteLine("Classifica o Índice de Massa Corporal (IMC) abaixo de 18,5, como: 'Baixo Peso' ou 'Magreza.'");
+                    Console.WriteLine("");
+                }
+                else if (resultadoIMC >= 18.5 && resultadoIMC <= 24.9)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"O seu resultado do IMC é: {resultadoIMC:F2}" + "\r");
+                    Console.WriteLine("\nIMC Entre 18,50 e 24,99, Você está com peso Normal! Meus Parabéns!");
+                    Console.WriteLine("Continue Assim!!!");
+                    Console.WriteLine("");
+                }
+                else if (resultadoIMC >= 25 && resultadoIMC <= 29.9)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"O seu resultado do IMC é: {resultadoIMC:F2}" + "\r");
+                    Console.WriteLine("\nIMC Entre 25 e 29.99, ATENÇÃO! Você está no SOBRE PESO!");
+                    Console.WriteLine("Acima do peso entre os adultos! Cuidado!");
+                    Console.WriteLine("");
+                }
+                else if (resultadoIMC >= 30 && resultadoIMC <= 34.9)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"O seu resultado do IMC é: {resultadoIMC:F2}" + "\r");
+                    Console.WriteLine("\nIMC Entre 30 e 34,99. ATENÇÃO! Obesidade Classe I! ");
+                    Console.WriteLine("CUIDADO! Procure Ajuda!!!");
+                    Console.WriteLine("");
+                }
+                else if (resultadoIMC >= 35 && resultadoIMC <= 39.9)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"O seu resultado do IMC é: {resultadoIMC:F2}" + "\r");
+                    Console.WriteLine("\nIMC Entre 35 e 39,99. ATENÇÃO!!!");
+                    Console.WriteLine("Você está na Obesidade Classe II! CUIDADO!");
+                    Console.WriteLine("Procure Ajuda, o quanto antes!");
+                    Console.WriteLine("Saiba mais no Site OMS: https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/body-mass-index");
+                    Console.WriteLine("");
+                }
+                else
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine($"O seu resultado do IMC é: {resultadoIMC:F2}" + "\r");
+                    Console.WriteLine("\nIMC Acima de 40, ATENÇÃO!!! É Obesidade classe III Mórbida (Severa)!!!");
+                    Console.WriteLine("Você está Com Risco de Vida! Procure Ajuda o Quanto Antes!!!");
+                    Console.WriteLine("Saiba mais no Site OMS: https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/body-mass-index");
+                    Console.WriteLine("");
+                }
+
+                Console.WriteLine("Deseja calcular outro IMC? (s para continuar / n para sair): ");
+                continuar = Console.ReadLine();
+
+                if (continuar.ToLower() == "n")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("\nObrigado por ter utilizado o sistema de IMC da Robotrix! Volte Sempre!");
+                    Console.WriteLine("");
+                }
+            }
+        }
+    }
+}
